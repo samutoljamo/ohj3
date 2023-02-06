@@ -6,7 +6,7 @@ public class Date {
     private int day;
     private int month;
     private int year;
-    final static ArrayList<Integer> daysInMonth = new ArrayList<Integer>(){{
+    final private ArrayList<Integer> daysInMonth = new ArrayList<Integer>(){{
         add(31);
         add(28);
         add(31);
