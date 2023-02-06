@@ -9,10 +9,10 @@ public class WordGame {
     private WordGameState gameState;
 
     public static class WordGameState {
-        String word;
-        int mistakes;
-        int mistakeLimit;
-        int missingChars;
+        private String word;
+        private int mistakes;
+        private int mistakeLimit;
+        private int missingChars;
         private WordGameState(){
             word = "";
             mistakes = 0;
@@ -60,7 +60,7 @@ public class WordGame {
         return gameState != null && gameState.getMissingChars() > 0 && gameState.getMistakes() <= gameState.getMistakeLimit();
     }
 
-    WordGameState guess(char c) throws GameStateException {
+    public WordGameState guess(char c) throws GameStateException {
         c = Character.toLowerCase(c);
         if(!isGameActive()){
             throw new GameStateException("There is currently no active word game!");
@@ -91,7 +91,7 @@ public class WordGame {
         }
         return gameState;
     }
-    WordGameState guess(String s) throws GameStateException {
+    public WordGameState guess(String s) throws GameStateException {
         if(!isGameActive()){
             throw new GameStateException("There is currently no active word game!");
         }
@@ -107,7 +107,7 @@ public class WordGame {
         return gameState;
     }
 
-    WordGameState getGameState() throws GameStateException {
+    public WordGameState getGameState() throws GameStateException {
         if(!isGameActive()){
             throw new GameStateException("There is currently no active word game!");
         }
