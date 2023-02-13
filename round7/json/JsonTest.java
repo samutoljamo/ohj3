@@ -79,7 +79,7 @@ public class JsonTest {
     numberObj2.set("number", new ValueNode("646 555-4567"));
 
     rootObj.set("children", new ArrayNode());
-    rootObj.set("spouse", new ValueNode(null));
+    rootObj.set("spouse", new ValueNode());
     
     return rootObj;
   }

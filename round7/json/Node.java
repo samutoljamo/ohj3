@@ -67,7 +67,7 @@ public abstract class Node {
     }
     else if(node.isValue()) {
       ValueNode valNode = (ValueNode) node;
-      String valStr = "null";
+      String valStr = "";
       if(valNode.isNumber()) {
         valStr = numberToString(valNode.getNumber());
       }
@@ -77,8 +77,10 @@ public abstract class Node {
       else if(valNode.isString()) {
         valStr = "\"" + valNode.getString() + "\"";
       }
+      else if(valNode.isNull()) {
+        valStr += valNode.getNull();
+      }
       sb.append(valStr);
     }
   }
-
 }
