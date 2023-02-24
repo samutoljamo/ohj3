@@ -1,11 +1,12 @@
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.TreeMap;
 
 public class ObjectNode extends Node implements Iterable<String> {
-    private HashMap<String, Node> _nodes;
+    private TreeMap<String, Node> _nodes;
 
     public ObjectNode() {
-        _nodes = new HashMap<>();
+        _nodes = new TreeMap<>();
     }
 
     public void set(String key, Node node) {
