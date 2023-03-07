@@ -3,12 +3,21 @@ import java.io.IOException;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.function.Consumer;
 import java.util.stream.Stream;
 import java.util.Scanner;
 
 public class MovieAnalytics {
     private ArrayList<Movie> movies;
+
+    private Comparator<Movie> byYear = (Movie m1, Movie m2) -> {
+        int diff = m1.getReleaseYear() - m2.getReleaseYear();
+        if(diff == 0){
+            return m1.getTitle().compareTo(m2.getTitle());
+        }
+        return diff;
+    };
     public MovieAnalytics() {
         movies = new ArrayList<>();
     }
@@ -35,18 +44,18 @@ public class MovieAnalytics {
         }
     }
     Stream<Movie> moviesAfter(int year){
-        return movies.stream().filter(movie -> movie.getReleaseYear() >= year).sorted((Movie m1, Movie m2) -> m1.getReleaseYear() - m2.getReleaseYear());
+        return movies.stream().filter(movie -> movie.getReleaseYear() >= year).sorted(byYear);
     }
 
     Stream<Movie> moviesBefore(int year){
-        return movies.stream().filter(movie -> movie.getReleaseYear() <= year).sorted((Movie m1, Movie m2) -> m1.getReleaseYear() - m2.getReleaseYear());
+        return movies.stream().filter(movie -> movie.getReleaseYear() <= year).sorted(byYear);
     }
 
     Stream<Movie> moviesBetween(int year1, int year2){
-        return movies.stream().filter(movie -> movie.getReleaseYear() >= year1 && movie.getReleaseYear() <= year2).sorted((Movie m1, Movie m2) -> m1.getReleaseYear() - m2.getReleaseYear());
+        return movies.stream().filter(movie -> movie.getReleaseYear() >= year1 && movie.getReleaseYear() <= year2).sorted(byYear);
     }
 
     Stream<Movie> moviesByDirector(String director){
-        return movies.stream().filter(movie -> movie.getDirector().equals(director)).sorted((Movie m1, Movie m2) -> m1.getReleaseYear() - m2.getReleaseYear());
+        return movies.stream().filter(movie -> movie.getDirector().equals(director)).sorted(byYear);
     }
 }
