@@ -34,8 +34,19 @@ public class MovieAnalytics2 {
             return;
         }
     }
+
+    public static Comparator<Movie> byTitle(){
+        return Comparator.comparing(Movie::getTitle);
+    }
+
     public void printCountByDirector(int n){
-        movies.stream().collect(Collectors.groupingBy(Movie::getDirector, Collectors.counting())).entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).limit(n).forEach(entry -> System.out.format("%s: %d movies%n", entry.getKey(), entry.getValue()));
+        movies.stream().collect(Collectors.groupingBy(Movie::getDirector, Collectors.counting())).entrySet().stream().sorted((o1, o2) -> {
+            int diff = (int) (o2.getValue() - o1.getValue());
+            if(diff == 0){
+                return o1.getKey().compareTo(o2.getKey());
+            }
+            return diff;
+        }).limit(n).forEach(entry -> System.out.format("%s: %d movies%n", entry.getKey(), entry.getValue()));
     }
 
     public void printAverageDurationByGenre(){
@@ -43,6 +54,15 @@ public class MovieAnalytics2 {
     }
 
     public void printAverageScoreByGenre(){
-        movies.stream().collect(Collectors.groupingBy(Movie::getGenre, Collectors.averagingDouble(Movie::getScore))).entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).forEach(entry -> System.out.format("%s: %.2f%n", entry.getKey(), entry.getValue()));
+        movies.stream().collect(Collectors.groupingBy(Movie::getGenre, Collectors.averagingDouble(Movie::getScore))).entrySet().stream().sorted((o1, o2) -> {
+            double diff = (double) (o2.getValue() - o1.getValue());
+            if(diff == 0){
+                return o1.getKey().compareTo(o2.getKey());
+            }
+            if (diff > 0) {
+                return 1;
+            }
+            return -1;
+        }).forEach(entry -> System.out.format("%s: %.2f%n", entry.getKey(), entry.getValue()));
     }
 }
