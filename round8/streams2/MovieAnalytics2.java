@@ -1,3 +1,4 @@
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -21,16 +22,14 @@ public class MovieAnalytics2 {
     public void populateWithData(String filename) {
         try{
             File file = new File(filename);
-            Scanner sc = new Scanner(file);
 
+            BufferedReader br = new BufferedReader(new java.io.FileReader(file));
 
-            while(sc.hasNextLine()){
-                String line = sc.nextLine();
+            br.lines().forEach(line -> {
                 String[] data = line.split(";");
                 Movie movie = new Movie(data[0], Integer.parseInt(data[1]), Integer.parseInt(data[2]), data[3], Double.parseDouble(data[4]), data[5]);
                 movies.add(movie);
-
-            }
+            });
         } catch(IOException e){
             return;
         }
