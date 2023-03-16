@@ -13,14 +13,15 @@ public class ObjectNode extends Node implements Iterable<String> {
     public ObjectNode() {
         _nodes = new TreeMap<>();
     }
+    
     /**
-     * Stores a name - JSON node pair into this JSON object.
-     * @param name the name of the name-node pair.
-     * @param node the JSON node of the name-node pair.
+     * Returns the number of JSON nodes stored under this JSON object.
+     * @return the number of JSON nodes under this JSON object.
      */
-    public void set(String name, Node node) {
-        _nodes.put(name, node);
+    public int size() {
+        return _nodes.size();
     }
+
     /**
      * Returns the JSON node stored under the given name.
      * @param name the name of the name-node pair whose node should be returned.
@@ -29,14 +30,16 @@ public class ObjectNode extends Node implements Iterable<String> {
     public Node get(String name) {
         return _nodes.get(name);
     }
-
+    
     /**
-     * Returns the number of JSON nodes stored under this JSON object.
-     * @return the number of JSON nodes under this JSON object.
+     * Stores a name - JSON node pair into this JSON object.
+     * @param name the name of the name-node pair.
+     * @param node the JSON node of the name-node pair.
      */
-    public int size() {
-        return _nodes.size();
+    public void set(String name, Node node) {
+        _nodes.put(name, node);
     }
+
 
     /**
      * Returns a String iterator that iterates the names of the name-node pairs stored in this JSON object in natural String order.
