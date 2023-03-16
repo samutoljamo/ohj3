@@ -23,21 +23,21 @@ public class ValueNode extends Node {
     }
 
     /**
-     * Constructs a JSON value node that stores the given boolean value.
-     * @param value the boolean value to be stored.
-     */
-    public ValueNode(boolean value) {
-        this._value3 = value;
-        this._valueType = ValueType.BOOLEAN;
-    }
-
-    /**
      * Constructs a JSON value node that stores the given double value.
      * @param value the number to be stored.
      */
     public ValueNode(double value) {
         this._value = value;
         this._valueType = ValueType.NUMBER;
+    }
+
+    /**
+     * Constructs a JSON value node that stores the given boolean value.
+     * @param value the boolean value to be stored.
+     */
+    public ValueNode(boolean value) {
+        this._value3 = value;
+        this._valueType = ValueType.BOOLEAN;
     }
 
     /**
@@ -48,14 +48,6 @@ public class ValueNode extends Node {
         this._value2 = value;
         this._valueType = ValueType.STRING;
     }    
-    
-    /**
-    * Checks whether this value node stores a boolean value.
-    * @return true if this node stores a boolean value, otherwise false.
-    */
-    public boolean isBoolean() {
-        return this._valueType == ValueType.BOOLEAN;
-    }
     /**
      * Checks whether this value node stores a number (double).
      * @return true if this node stores a double value, otherwise false.
@@ -64,6 +56,14 @@ public class ValueNode extends Node {
         return this._valueType == ValueType.NUMBER;
     }
 
+    
+    /**
+    * Checks whether this value node stores a boolean value.
+    * @return true if this node stores a boolean value, otherwise false.
+    */
+    public boolean isBoolean() {
+        return this._valueType == ValueType.BOOLEAN;
+    }
 
     /**
      * Checks whether this value node stores a string.
@@ -79,6 +79,13 @@ public class ValueNode extends Node {
     public boolean isNull() {
         return this._valueType == ValueType.NULL;
     }
+    /**
+     * Returns the stored value as a number (double).
+     * @return the stored number as a double value.
+     */
+    public double getNumber() {
+        return this._value;
+    }
 
     /**
      * Returns the stored value as a boolean value.
@@ -86,13 +93,6 @@ public class ValueNode extends Node {
      */
     public boolean getBoolean() {
         return this._value3;
-    }
-    /**
-     * Returns the stored value as a number (double).
-     * @return the stored number as a double value.
-     */
-    public double getNumber() {
-        return this._value;
     }
     /**
      * Returns the stored value as a string.
