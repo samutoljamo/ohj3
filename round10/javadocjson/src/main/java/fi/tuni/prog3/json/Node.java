@@ -5,6 +5,12 @@ package fi.tuni.prog3.json;
  */
 public abstract class Node {
   /**
+   * The only constructor.
+   * The only constructor. Will be invoked, usually implicitly, by subclass constructors.
+   */
+  protected Node() {
+  }
+  /**
    * Checks whether this node represents a JSON object.
    * @return true if this node represents a JSON object, otherwise false.
    */
