@@ -53,14 +53,14 @@ public class ValueNode extends Node {
     * Checks whether this value node stores a boolean value.
     * @return true if this value node stores a boolean value, false otherwise.
     */
-    boolean isBoolean() {
+    public boolean isBoolean() {
         return this._valueType == ValueType.BOOLEAN;
     }
     /**
      * Checks whether this value node stores a number(double).
      * @return true if this value node stores a number, false otherwise.
      */
-    boolean isNumber() {
+    public boolean isNumber() {
         return this._valueType == ValueType.NUMBER;
     }
 
@@ -69,14 +69,14 @@ public class ValueNode extends Node {
      * Checks whether this value node stores a string.
      * @return true if this value node stores a string, false otherwise.
      */
-    boolean isString() {
+    public boolean isString() {
         return this._valueType == ValueType.STRING;
     }
     /**
      * Checks whether this value node stores the null value.
      * @return true if this value node stores the null value, false otherwise.
      */
-    boolean isNull() {
+    public boolean isNull() {
         return this._valueType == ValueType.NULL;
     }
 
@@ -84,28 +84,28 @@ public class ValueNode extends Node {
      * Returns the boolean value stored in this value node.
      * @return the boolean value stored in this value node.
      */
-    boolean getBoolean() {
+    public boolean getBoolean() {
         return this._value3;
     }
     /**
      * Returns the number stored in this value node.
      * @return the number stored in this value node.
      */
-    double getNumber() {
+    public double getNumber() {
         return this._value;
     }
     /**
      * Returns the String stored in this value node.
      * @return the String stored in this value node.
      */
-    String getString() {
+    public String getString() {
         return this._value2;
     }
     /**
      * Returns the null value stored in this value node.
      * @return the null value stored in this value node.
      */
-    Object getNull() {
+    public Object getNull() {
         return null;
     }
     
