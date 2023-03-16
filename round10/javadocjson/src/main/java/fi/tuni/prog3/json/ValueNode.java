@@ -7,7 +7,7 @@ enum ValueType {
     NULL
 }
 /**
- * A class for representing a JSON value.
+ * A class for representing a JSON value. The value can be either a double, a boolean, a String or null.
  */
 public class ValueNode extends Node {
     private double _value;
