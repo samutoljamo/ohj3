@@ -24,7 +24,7 @@ public class ValueNode extends Node {
 
     /**
      * Constructs a JSON value node that stores the given double value.
-     * @param value the number to be stored.
+     * @param value The double value to store in the new JSON value node.
      */
     public ValueNode(double value) {
         this._value = value;
@@ -33,7 +33,7 @@ public class ValueNode extends Node {
 
     /**
      * Constructs a JSON value node that stores the given boolean value.
-     * @param value the boolean value to be stored.
+     * @param value The boolean value to store in the new JSON value node.
      */
     public ValueNode(boolean value) {
         this._value3 = value;
@@ -42,7 +42,8 @@ public class ValueNode extends Node {
 
     /**
      * Constructs a JSON value node that stores the given String.
-     * @param value the String to be stored.
+     * @param value The string to store in the new JSON value node.
+     * @throws IllegalStateException if the parameter value is null.
      */
     public ValueNode(String value) {
         this._value2 = value;
