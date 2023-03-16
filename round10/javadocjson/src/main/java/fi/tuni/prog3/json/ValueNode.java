@@ -83,6 +83,7 @@ public class ValueNode extends Node {
     /**
      * Returns the stored value as a number (double).
      * @return the stored number as a double value.
+     * @throws IllegalStateException if the stored value is not a number.
      */
     public double getNumber() {
         return this._value;
@@ -91,6 +92,7 @@ public class ValueNode extends Node {
     /**
      * Returns the stored value as a boolean value.
      * @return the stored boolean value.
+     * @throws IllegalStateException if the stored value is not a boolean value.
      */
     public boolean getBoolean() {
         return this._value3;
@@ -98,6 +100,7 @@ public class ValueNode extends Node {
     /**
      * Returns the stored value as a string.
      * @return the stored string.
+     * @throws IllegalStateException if the stored value is not a string.
      */
     public String getString() {
         return this._value2;
@@ -105,6 +108,7 @@ public class ValueNode extends Node {
     /**
      * Returns the stored value as null.
      * @return null.
+     * @throws IllegalStateException if the stored value is not null.
      */
     public Object getNull() {
         return null;
