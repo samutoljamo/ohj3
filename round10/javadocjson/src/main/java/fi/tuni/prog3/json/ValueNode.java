@@ -51,14 +51,14 @@ public class ValueNode extends Node {
     
     /**
     * Checks whether this value node stores a boolean value.
-    * @return true if this value node stores a boolean value, false otherwise.
+    * @return true if this node stores a boolean value, otherwise false.
     */
     public boolean isBoolean() {
         return this._valueType == ValueType.BOOLEAN;
     }
     /**
-     * Checks whether this value node stores a number(double).
-     * @return true if this value node stores a number, false otherwise.
+     * Checks whether this value node stores a number (double).
+     * @return true if this node stores a double value, otherwise false.
      */
     public boolean isNumber() {
         return this._valueType == ValueType.NUMBER;
@@ -67,43 +67,43 @@ public class ValueNode extends Node {
 
     /**
      * Checks whether this value node stores a string.
-     * @return true if this value node stores a string, false otherwise.
+     * @return true if this node stores a string, otherwise false.
      */
     public boolean isString() {
         return this._valueType == ValueType.STRING;
     }
     /**
-     * Checks whether this value node stores the null value.
-     * @return true if this value node stores the null value, false otherwise.
+     * Checks whether this value node stores null.
+     * @return true if this node stores null, otherwise false.
      */
     public boolean isNull() {
         return this._valueType == ValueType.NULL;
     }
 
     /**
-     * Returns the boolean value stored in this value node.
-     * @return the boolean value stored in this value node.
+     * Returns the stored value as a boolean value.
+     * @return the stored boolean value.
      */
     public boolean getBoolean() {
         return this._value3;
     }
     /**
-     * Returns the number stored in this value node.
-     * @return the number stored in this value node.
+     * Returns the stored value as a number (double).
+     * @return the stored number as a double value.
      */
     public double getNumber() {
         return this._value;
     }
     /**
-     * Returns the String stored in this value node.
-     * @return the String stored in this value node.
+     * Returns the stored value as a string.
+     * @return the stored string.
      */
     public String getString() {
         return this._value2;
     }
     /**
-     * Returns the null value stored in this value node.
-     * @return the null value stored in this value node.
+     * Returns the stored value as null.
+     * @return null.
      */
     public Object getNull() {
         return null;
