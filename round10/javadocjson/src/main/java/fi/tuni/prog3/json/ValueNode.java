@@ -32,7 +32,7 @@ public class ValueNode extends Node {
     }
 
     /**
-     * Constructs a JSON value node that stores the given number.
+     * Constructs a JSON value node that stores the given double value.
      * @param value the number to be stored.
      */
     public ValueNode(double value) {
