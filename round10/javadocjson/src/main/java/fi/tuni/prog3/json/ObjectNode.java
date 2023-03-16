@@ -43,7 +43,7 @@ public class ObjectNode extends Node implements Iterable<String> {
 
     /**
      * Returns a String iterator that iterates the names of the name-node pairs stored in this JSON object in natural String order.
-     * @return a String iterator that iterates the names of the name-node pairs stored in this JSON object in natural String order.
+     * @return a String iterator that iterates the names of the stored name-node pairs in natural String order.
      */
     @Override
     public Iterator<String> iterator() {
