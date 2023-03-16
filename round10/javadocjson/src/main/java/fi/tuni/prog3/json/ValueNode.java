@@ -12,7 +12,7 @@ enum ValueType {
 public class ValueNode extends Node {
     private double _value;
     private String _value2;
-    private Boolean _value3;
+    private boolean _value3;
 
     Enum _valueType;
     /**
@@ -26,7 +26,7 @@ public class ValueNode extends Node {
      * Constructs a JSON value node that stores the given boolean value.
      * @param value the boolean value to be stored.
      */
-    public ValueNode(Boolean value) {
+    public ValueNode(boolean value) {
         this._value3 = value;
         this._valueType = ValueType.BOOLEAN;
     }
@@ -53,14 +53,14 @@ public class ValueNode extends Node {
     * Checks whether this value node stores a boolean value.
     * @return true if this value node stores a boolean value, false otherwise.
     */
-    Boolean isBoolean() {
+    boolean isBoolean() {
         return this._valueType == ValueType.BOOLEAN;
     }
     /**
      * Checks whether this value node stores a number(double).
      * @return true if this value node stores a number, false otherwise.
      */
-    Boolean isNumber() {
+    boolean isNumber() {
         return this._valueType == ValueType.NUMBER;
     }
 
@@ -69,14 +69,14 @@ public class ValueNode extends Node {
      * Checks whether this value node stores a string.
      * @return true if this value node stores a string, false otherwise.
      */
-    Boolean isString() {
+    boolean isString() {
         return this._valueType == ValueType.STRING;
     }
     /**
      * Checks whether this value node stores the null value.
      * @return true if this value node stores the null value, false otherwise.
      */
-    Boolean isNull() {
+    boolean isNull() {
         return this._valueType == ValueType.NULL;
     }
 
@@ -84,7 +84,7 @@ public class ValueNode extends Node {
      * Returns the boolean value stored in this value node.
      * @return the boolean value stored in this value node.
      */
-    Boolean getBoolean() {
+    boolean getBoolean() {
         return this._value3;
     }
     /**
