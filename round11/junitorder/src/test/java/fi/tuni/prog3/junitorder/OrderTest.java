@@ -4,9 +4,9 @@ package fi.tuni.prog3.junitorder;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-import fi.tuni.prog3.junitattainment.Order;
-import fi.tuni.prog3.junitattainment.Order.Item;
-import fi.tuni.prog3.junitattainment.Order.Entry;
+import fi.tuni.prog3.junitorder.Order;
+import fi.tuni.prog3.junitorder.Order.Item;
+import fi.tuni.prog3.junitorder.Order.Entry;
 
 
 
