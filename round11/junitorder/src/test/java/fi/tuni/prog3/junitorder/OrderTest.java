@@ -235,6 +235,6 @@ public class OrderTest{
     public void testToString(){
         Item i = new Item("Nimi", 1.3);
         Entry e = new Entry(i, 3);
-        assertEquals("3 units of Nimi", e.toString());
+        assertEquals("3 units of Item(Nimi, 1.30)", e.toString());
     }
 }
