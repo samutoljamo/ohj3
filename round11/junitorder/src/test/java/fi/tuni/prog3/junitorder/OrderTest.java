@@ -157,4 +157,43 @@ public class OrderTest{
             o.removeItems("Nimi2", 3);
         });
     }
+
+    @Test
+    public void testItemNullName(){
+        assertThrows(IllegalArgumentException.class, () -> {
+            Item i = new Item(null, 1.3);
+        });
+    }
+    @Test
+    public void testItemNegativePrice(){
+        assertThrows(IllegalArgumentException.class, () -> {
+            Item i = new Item("Nimi", -1.3);
+        });
+    }
+    @Test
+    public void testItemGetName(){
+        Item i = new Item("Nimi", 1.3);
+        assertEquals("Nimi", i.getName());
+    }
+
+    @Test
+    public void testItemGetPrice(){
+        Item i = new Item("Nimi", 1.3);
+        assertEquals(1.3, i.getPrice(), 0.001);
+    }
+
+    @Test
+    public void testItemEquals(){
+        Item i = new Item("Nimi", 1.3);
+        Item i2 = new Item("Nimi", 5);
+        assertEquals(true, i.equals(i2));
+    }
+
+    @Test
+    public void testItemEquals2(){
+        Item i = new Item("Nimi", 5);
+        Item i2 = new Item("Nimi2", 5);
+        assertEquals(false, i.equals(i2));
+    }
+
 }
