@@ -104,7 +104,7 @@ public class OrderTest{
         Order o = new Order();
         o.addItems(i, 3);
         o.addItems(i, 3);
-        assertEquals(7.8, o.getTotalPrice());
+        assertEquals(7.8, o.getTotalPrice(), 0.001);
     }
 
     @Test
