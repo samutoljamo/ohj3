@@ -93,9 +93,10 @@ public class OrderTest{
     @Test
     public void testGetEntriesCount(){
         Item i = new Item("Nimi", 1.3);
+        Item i2 = new Item("Nimi2", 1.3);
         Order o = new Order();
         o.addItems(i, 3);
-        o.addItems(i, 3);
+        o.addItems(i2, 3);
         assertEquals(2, o.getEntryCount());
     }
 
