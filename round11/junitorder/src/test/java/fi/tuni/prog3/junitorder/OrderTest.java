@@ -46,11 +46,104 @@ public class OrderTest{
             o.addItems("Nimi", 3);
         });
     }
+    
+    @Test
+    public void testAddItemStringNegative(){
+        Item i = new Item("Nimi", 1.3);
+        Order o = new Order();
+        o.addItems(i, 3);
+        assertThrows(IllegalArgumentException.class.class, () -> {
+            o.addItems("Nimi", -3);
+        });
+    }
     @Test
     public void testAddItemWithString(){
         Item i = new Item("Nimi", 1.3);
         Order o = new Order();
         o.addItems(i, 3);
         assertEquals(true, o.addItems("Nimi", 3));
+    }
+    @Test
+    public void testGetEntries(){
+        Item i = new Item("Nimi", 1.3);
+        Order o = new Order();
+        o.addItems(i, 3);
+        assertEquals(1, o.getEntries().size());
+    }
+
+    @Test
+    public void testGetEntries2(){
+        Item i = new Item("Nimi", 1.3);
+        Order o = new Order();
+        o.addItems(i, 3);
+        o.addItems(i, 3);
+        assertEquals(2, o.getEntries().size());
+    }
+
+    @Test
+    public testGetEntriesCount(){
+        Item i = new Item("Nimi", 1.3);
+        Order o = new Order();
+        o.addItems(i, 3);
+        o.addItems(i, 3);
+        assertEquals(2, o.getEntryCount());
+    }
+
+    @Test
+    public testGetItemCount(){
+        Item i = new Item("Nimi", 1.3);
+        Order o = new Order();
+        o.addItems(i, 3);
+        o.addItems(i, 3);
+        assertEquals(6, o.getItemCount());
+    }
+
+    @Test
+    public testTotalPrice(){
+        Item i = new Item("Nimi", 1.3);
+        Order o = new Order();
+        o.addItems(i, 3);
+        o.addItems(i, 3);
+        assertEquals(7.8, o.getTotalPrice());
+    }
+
+    @Test
+    public void testIsEmpty(){
+        Order o = new Order();
+        assertEquals(true, o.isEmpty());
+
+        Item i = new Item("Nimi", 1.3);
+        o.addItems(i, 3);
+        assertEquals(false, o.isEmpty());
+    }
+
+    @Test
+    public void testRemoveItems(){
+        Item i = new Item("Nimi", 1.3);
+        Order o = new Order();
+        o.addItems(i, 3);
+        o.addItems(i, 3);
+        assertEquals(true, o.removeItems("Nimi", 3));
+    }
+
+    @Test
+    public void testRemoveItemsNegative(){
+        Item i = new Item("Nimi", 1.3);
+        Order o = new Order();
+        o.addItems(i, 3);
+        o.addItems(i, 3);
+        assertThrows(IllegalArgumentException.class, () -> {
+            o.removeItems("Nimi", -3);
+        });
+    }
+    @Test
+    public void testRemoveNoelement(){
+        Item i = new Item("Nimi", 1.3);
+        Order o = new Order();
+        o.addItems(i, 3);
+        o.addItems(i, 3);
+        assertThrows(NoSuchElementException.class, () -> {
+            o.removeItems("Nimi2", 3);
+        });
     }
 }
