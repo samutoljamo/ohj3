@@ -1,6 +1,9 @@
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
+import fi.tuni.prog3.junitattainment.Attainment;
+
+// attainment is at round11/junitattainment/testfiles/0/Attainment.class
 
 public class TestAttainment {
     @Test
