@@ -3,6 +3,7 @@ package fi.tuni.prog3.junitorder;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+import java.util.NoSuchElementException;
 
 import fi.tuni.prog3.junitorder.Order;
 import fi.tuni.prog3.junitorder.Order.Item;
