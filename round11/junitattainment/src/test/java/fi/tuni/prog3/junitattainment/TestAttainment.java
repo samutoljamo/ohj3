@@ -7,9 +7,9 @@ import fi.tuni.prog3.junitattainment.Attainment;
 
 public class TestAttainment {
     @Test
-    public void testGetCourseName() {
+    public void testGetCourseCode() {
         Attainment a = new Attainment("Nimi", "123456", 5);
-        assertEquals("Nimi", a.getCourseName());
+        assertEquals("Nimi", a.getCourseCode());
     }
     @Test
     public void testGetStudentNumber() {
