@@ -1,11 +1,13 @@
+
+package fi.tuni.prog3.junitattainment;
+
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 import fi.tuni.prog3.junitattainment.Attainment;
 
-// attainment is at round11/junitattainment/testfiles/0/Attainment.class
 
-public class TestAttainment {
+public class AttainmentTest {
     @Test
     public void testGetCourseCode() {
         Attainment a = new Attainment("Nimi", "123456", 5);
@@ -59,6 +61,4 @@ public class TestAttainment {
         Attainment b = new Attainment("Nimia", "abd", 5);
         assertEquals(-1, a.compareTo(b));
     }
-
-
 }
