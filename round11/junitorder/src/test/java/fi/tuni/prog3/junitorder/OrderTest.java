@@ -195,5 +195,46 @@ public class OrderTest{
         Item i2 = new Item("Nimi2", 5);
         assertEquals(false, i.equals(i2));
     }
+    @Test
+    public void testEntryNegativeCount(){
+        Item i = new Item("Nimi", 1.3);
+        assertThrows(IllegalArgumentException.class, () -> {
+            Entry e = new Entry(i, -3);
+        });
+    }
 
+    @Test
+    public void testGetItemName(){
+        Item i = new Item("Nimi", 1.3);
+        Entry e = new Entry(i, 3);
+        assertEquals("Nimi", e.getItemName());
+    }
+
+    @Test
+    public void testGetUnitPrice(){
+        Item i = new Item("Nimi", 1.3);
+        Entry e = new Entry(i, 3);
+        assertEquals(1.3, e.getUnitPrice(), 0.001);
+    }
+
+    @Test
+    public void testGetItem(){
+        Item i = new Item("Nimi", 1.3);
+        Entry e = new Entry(i, 3);
+        assertEquals(i, e.getItem());
+    }
+
+    @Test
+    public void testGetCount(){
+        Item i = new Item("Nimi", 1.3);
+        Entry e = new Entry(i, 3);
+        assertEquals(3, e.getCount());
+    }
+
+    @Test
+    public void testToString(){
+        Item i = new Item("Nimi", 1.3);
+        Entry e = new Entry(i, 3);
+        assertEquals("3 units of Nimi", e.toString());
+    }
 }
