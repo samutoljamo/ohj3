@@ -52,7 +52,7 @@ public class OrderTest{
         Item i = new Item("Nimi", 1.3);
         Order o = new Order();
         o.addItems(i, 3);
-        assertThrows(IllegalArgumentException.class.class, () -> {
+        assertThrows(IllegalArgumentException.class, () -> {
             o.addItems("Nimi", -3);
         });
     }
@@ -81,7 +81,7 @@ public class OrderTest{
     }
 
     @Test
-    public testGetEntriesCount(){
+    public void testGetEntriesCount(){
         Item i = new Item("Nimi", 1.3);
         Order o = new Order();
         o.addItems(i, 3);
@@ -90,7 +90,7 @@ public class OrderTest{
     }
 
     @Test
-    public testGetItemCount(){
+    public void testGetItemCount(){
         Item i = new Item("Nimi", 1.3);
         Order o = new Order();
         o.addItems(i, 3);
@@ -99,7 +99,7 @@ public class OrderTest{
     }
 
     @Test
-    public testTotalPrice(){
+    public void testTotalPrice(){
         Item i = new Item("Nimi", 1.3);
         Order o = new Order();
         o.addItems(i, 3);
